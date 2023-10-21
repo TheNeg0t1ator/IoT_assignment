@@ -26,8 +26,11 @@ jobs:
         - name: Compile C++ code
           run: arm-linux-gnueabihf-g++ main.c -o HelloWorld-arm
 
-        - name: Creating executable
+        - name: ls
           run: ls
+
+        - name: Creating executable
+          run: chmod +x HelloWorld-arm
   
         - name: Upload artifact
           uses: actions/upload-artifact@v3
