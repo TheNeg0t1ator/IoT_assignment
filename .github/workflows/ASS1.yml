@@ -27,7 +27,7 @@ jobs:
           run: arm-linux-gnueabihf-g++ main.c -o HelloWorld-arm
 
         - name: Creating executable
-          run: chmod +x Helloworld-arm
+          run: chmod +x ./Helloworld-arm
   
         - name: Upload artifact
           uses: actions/upload-artifact@v3
