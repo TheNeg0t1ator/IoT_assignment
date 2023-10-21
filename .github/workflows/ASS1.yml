@@ -24,10 +24,14 @@ jobs:
           run: sudo apt-get update && sudo apt-get install -y g++-arm-linux-gnueabihf
   
         - name: Compile C++ code
-          run: arm-linux-gnueabihf-g++ main.c -o HelloWorld-arm.elf
+          run: arm-linux-gnueabihf-g++ main.c -o HelloWorld-arm
+
+        - name: Creating executable
+          run: chmod +x Helloworld-arm
   
         - name: Upload artifact
           uses: actions/upload-artifact@v3
           with:
             name: compiled-code
-            path: HelloWorld-arm.elf
+            path: HelloWorld-arm
+            
