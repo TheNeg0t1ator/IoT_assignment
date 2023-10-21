@@ -10,24 +10,24 @@ jobs:
   
       steps:
         - name: Set up Node.js
-          uses: actions/setup-node@v2
+          uses: actions/setup-node@v3
           with:
             node-version: 21.x
   
         - name: Set up QEMU for ARM
-          uses: docker/setup-qemu-action@v1
+          uses: docker/setup-qemu-action@v2
   
         - name: Check out code
-          uses: actions/checkout@v2
+          uses: actions/checkout@v3
   
         - name: Install cross-compiler
           run: sudo apt-get update && sudo apt-get install -y g++-arm-linux-gnueabihf
   
         - name: Compile C++ code
-          run: arm-linux-gnueabihf-g++ main.c -o HelloWorld-arm
+          run: arm-linux-gnueabihf-g++ main.c -o HelloWorld-arm.elf
   
         - name: Upload artifact
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v3
           with:
             name: compiled-code
             path: HelloWorld-arm
