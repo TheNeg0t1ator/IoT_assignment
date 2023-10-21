@@ -28,7 +28,6 @@ jobs:
 
         - name: Creating executable
           run: ls
-               chmod +x ./Helloworld-arm
   
         - name: Upload artifact
           uses: actions/upload-artifact@v3
