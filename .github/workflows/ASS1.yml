@@ -26,9 +26,6 @@ jobs:
         - name: Compile C++ Code
           run: arm-linux-gnueabihf-g++ main.cpp -o HelloWorld-arm
   
-        - name: chmodding
-          run: sudo chmod +x ./HelloWorld-arm
-
         - name: Upload artifact
           uses: actions/upload-artifact@v3
           with:
